@@ -1,6 +1,6 @@
 # Vagrant Box LAMP Stack
 
-This is a DEV LAMP debian based box for Magento Developers.
+This is a DEV LAMP debian based box. Use it for a basic development.
 
 ## Requirements
 
