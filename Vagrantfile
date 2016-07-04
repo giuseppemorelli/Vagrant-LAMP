@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "1.0.0"
   # for more info check: https://github.com/hollodotme/Helpers/blob/master/Tutorials/vagrant/self-hosted-vagrant-boxes-with-versioning.md
   config.vm.box_url = "http://public.giuseppemorelli.net/vagrant/boxes/gmdev/gmdev.json"
+  config.vm.hostname = "gmdev"
   config.vm.define "gmdev" do |gmdev|
   end
 
