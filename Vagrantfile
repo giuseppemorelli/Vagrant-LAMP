@@ -36,8 +36,8 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
 
-  #config.vm.synced_folder "../", "/home/sito.com", create: true, owner: "www-data"
-  #config.vm.synced_folder "/mnt/archivio", "/mnt/archivio"
+  #config.vm.synced_folder "/local/folder/project.com", "/var/www/proejct.com", create: true, owner: "www-data"
+  #config.vm.synced_folder "/extra/folder", "/mnt/extra/folder"
 
   config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine

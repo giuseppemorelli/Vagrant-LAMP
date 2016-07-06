@@ -8,6 +8,20 @@ This is a DEV LAMP debian based box. Use it for a basic development.
 - vagrant >1.8.4
 - (in case of error of shared folder mount errors) vagrant vagrant-vbguest plugin (install with the command vagrant plugin install vagrant-vbguest)
 
+## How to use
+
+1) download https://github.com/gmdotnet/Vagrant-LAMP/archive/master.zip
+
+2) unzip on your favorite work folder
+
+3) change Vagrantfile - section config.vm.synced_folder to sync your project folder
+
+4) run 'vagrant up'
+
+5) make your configuration on vagrant machine entering by run 'vagrant ssh'
+
+6) have fun!
+
 ## OS and base box
 
 - debian/jessie64  8.5.1
