@@ -6,7 +6,7 @@ This is a DEV LAMP debian based box. Use it for a basic development.
 
 - virtualbox 5.x
 - vagrant >1.8.4
-- (in case of error of shared folder mount errors) vagrant vagrant-vbguest plugin (install with the command vagrant plugin install vagrant-vbguest)
+- (in case of error of shared folder mount errors) vagrant vagrant-vbguest plugin (install with the command `vagrant plugin install vagrant-vbguest`)
 
 ## How to use
 
