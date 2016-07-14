@@ -64,6 +64,7 @@ This is a DEV LAMP debian based box. Use it for a basic development.
 - daemon user is 'www-data'
 - root folder is '/var/www'
 - mod_rewrite and mod_vhost_alias enabled
+- IMPORTANT: you need to add `EnableSendfile Off` on your website configuration under <Directory "..."> </Directory> ( here all info  https://www.vagrantup.com/docs/synced-folders/virtualbox.html )
 
 ### Vagrant Provision script
 
