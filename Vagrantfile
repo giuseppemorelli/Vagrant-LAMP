@@ -33,6 +33,7 @@ Vagrant.configure("2") do |config|
 
   #config.vm.synced_folder "/local/folder/project.com", "/var/www/proejct.com", create: true, owner: "vagrant"
   #config.vm.synced_folder "/extra/folder", "/mnt/extra/folder"
+  #config.vm.synced_folder "/home/user/.ssh", "/home/vagrant/.ssh"
 
   config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine

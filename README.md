@@ -16,11 +16,11 @@ This is a DEV LAMP debian based box. Use it for a basic development.
 
 3) change Vagrantfile - section config.vm.synced_folder to sync your project folder
 
-4) run 'vagrant up'
+4) run `vagrant up`
 
-5) make your configuration on vagrant machine entering by run 'vagrant ssh'
+5) make your configuration on vagrant machine entering by run `vagrant ssh`
 
-6) have fun!
+6) have fun and happy coding!
 
 ## OS and base box
 
@@ -73,13 +73,14 @@ This is a DEV LAMP debian based box. Use it for a basic development.
 
 ### MySQL server
 
-- created an user called 'local' with root privilegies
-- root password is 'vagrant'
+- created an user called `local` (password `local`) with root privilegies
+- root password is `vagrant`
 
 ### Apache server
 
-- daemon user is 'vagrant'
-- root folder is '/var/www'
+- ServerName is `vagrant`
+- daemon user is `vagrant`
+- root folder is `/var/www`
 - mod_rewrite and mod_vhost_alias enabled
 - IMPORTANT: you need to add `EnableSendfile Off` on your website configuration under <Directory "..."> </Directory> ( here all info  https://www.vagrantup.com/docs/synced-folders/virtualbox.html )
 
@@ -103,9 +104,14 @@ This is a DEV LAMP debian based box. Use it for a basic development.
 
 ### Vagrant Provision script
 
-- the script makes a backup of all databases into /home/backup/database/ folder
+- `backup_database.sh`: the script makes a backup of all databases into /home/backup/database/ folder
+
+### Scripts
+
+- `enable_website.sh`: create virtual host file and enable the website configuration in apache
+- `disable_website.sh`: disable website configuration in apache and delete the virtual host file
 
 ### Other info
 
-- root password is 'vagrant' but you can simply run 'sudo su' from vagrant user
+- root password is `vagrant` but you can simply run `sudo s` from vagrant user
 - if you can't find a configuration in this file before, it means is used the default value
