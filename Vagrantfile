@@ -1,14 +1,15 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+require 'yaml'
+vagrantconfig = YAML.load_file('config/config.yaml')
+
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "gmdev"
+  config.vm.box = "giuseppemorelli/lamp-stack"
   config.vm.box_version = "1.0.1"
-  # for more info check: https://github.com/hollodotme/Helpers/blob/master/Tutorials/vagrant/self-hosted-vagrant-boxes-with-versioning.md
-  config.vm.box_url = "http://public.giuseppemorelli.net/vagrant/boxes/gmdev/gmdev.json"
-  config.vm.hostname = "gmdev"
-  config.vm.define "gmdev" do |gmdev|
+  config.vm.hostname = vagrantconfig['hostname']
+  config.vm.define vagrantconfig['vagrantbox_name'] do |gmdev|
   end
 
   # Create a forwarded port mapping which allows access to a specific port
@@ -18,7 +19,7 @@ Vagrant.configure("2") do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network "private_network", ip: "192.168.250.10"
+  config.vm.network "private_network", ip: vagrantconfig['private_ip']
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -40,7 +41,7 @@ Vagrant.configure("2") do |config|
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-    vb.memory = "3024"
+    vb.memory = vagrantconfig['ram']
   end
 
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies

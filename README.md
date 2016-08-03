@@ -14,18 +14,20 @@ This is a DEV LAMP debian based box. Use it for a basic development.
 
 2) unzip on your favorite work folder
 
-3) change Vagrantfile - section config.vm.synced_folder to sync your project folder
+3) rename `config/config.yaml.sample` in `config/config.yaml`
 
-4) run `vagrant up`
+4) change settings or leave default in `config/config.yaml`
 
-5) make your configuration on vagrant machine entering by run `vagrant ssh`
+5) run `vagrant up`
 
-6) have fun and happy coding!
+6) make your configuration on vagrant machine entering by run `vagrant ssh`
+
+7) have fun and happy coding!
 
 ## OS and base box
 
 - debian/jessie64  8.5.1
-- private network ip: 192.168.250.10
+- default private network ip: 192.168.250.10
 
 ## Software Installed
 
