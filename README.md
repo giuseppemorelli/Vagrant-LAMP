@@ -16,11 +16,11 @@ This is a DEV LAMP debian based box. Use it for a basic development.
 
 3) rename `config/config.yaml.sample` in `config/config.yaml`
 
-4) change settings or leave default in `config/config.yaml`
+4) change settings in `config/config.yaml`
 
-5) run `vagrant up`
+5) run `vagrant up` on folder where is `Vagrantfile`
 
-6) make your configuration on vagrant machine entering by run `vagrant ssh`
+6) (optional) make your configuration on vagrant machine entering by run `vagrant ssh`
 
 7) have fun and happy coding!
 
@@ -115,5 +115,5 @@ This is a DEV LAMP debian based box. Use it for a basic development.
 
 ### Other info
 
-- root password is `vagrant` but you can simply run `sudo s` from vagrant user
+- root password is `vagrant` but you can simply run `sudo su` from vagrant user
 - if you can't find a configuration in this file before, it means is used the default value
