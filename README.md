@@ -117,3 +117,7 @@ This is a DEV LAMP debian based box. Use it for a basic development.
 
 - root password is `vagrant` but you can simply run `sudo su` from vagrant user
 - if you can't find a configuration in this file before, it means is used the default value
+
+### Credits
+
+Giuseppe Morelli - [giuseppemorelli.net](http://www.giuseppemorelli.net)
