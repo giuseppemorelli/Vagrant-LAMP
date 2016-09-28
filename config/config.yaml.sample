@@ -2,5 +2,10 @@ hostname: gmdev
 vagrantbox_name: gmdev
 private_ip: 192.168.250.10
 ram: 2048
-host_project_folder: /var/www/myproject.com
-vagrant_project_folder: /var/www/myproject.com
+share:
+    - folder:
+        host_folder: /var/www/myproject.com
+        vagrant_folder: /var/www/myproject.com
+    - folder:
+        host_folder: /mnt/extra/folder
+        vagrant_folder: /mnt/extra/folder

@@ -32,7 +32,11 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
 
-  config.vm.synced_folder vagrantconfig['host_project_folder'], vagrantconfig['vagrant_project_folder'], create: true, owner: "vagrant"
+  vagrantconfig['share'].each do |share|
+    config.vm.synced_folder share['folder']['host_folder'], share['folder']['host_folder'], create: true, owner: "vagrant"
+  end
+
+
   #config.vm.synced_folder "/extra/folder", "/mnt/extra/folder"
   #config.vm.synced_folder "/home/user/.ssh", "/home/vagrant/.ssh"
 
