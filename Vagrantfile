@@ -36,8 +36,13 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder share['folder']['host_folder'], share['folder']['vagrant_folder'], create: true, owner: "vagrant"
   end
 
+  # Rsync folders
   vagrantconfig['rsync'].each do |rsync|
-      config.vm.synced_folder rsync['folder']['host_folder'], rsync['folder']['vagrant_folder'], type: "rsync"
+      rsyncoptions = []
+      rsync['folder']['options'].each do |options|
+        rsyncoptions.push(options)
+      end
+      config.vm.synced_folder rsync['folder']['host_folder'], rsync['folder']['vagrant_folder'], type: "rsync", rsync__args: rsyncoptions
   end
 
   config.vm.provider "virtualbox" do |vb|

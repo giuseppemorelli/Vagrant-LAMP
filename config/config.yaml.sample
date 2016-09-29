@@ -11,5 +11,19 @@ share:
         vagrant_folder: /mnt/extra/folder
 rsync:
     - folder:
-        host_folder: /var/www/copyproject
-        vagrant_folder: /var/www/copyproject
+        host_folder: /mnt/rsync/folder/
+        vagrant_folder: /var/www/folder_to/deleted
+        options:
+            - "-a"
+            - "-r"
+            - "-v"
+            - "-z"
+            - "--delete"
+    - folder:
+        host_folder: /mnt/rsync/folder/
+        vagrant_folder: /var/www/folder_to/no_deleted
+        options:
+            - "-a"
+            - "-r"
+            - "-v"
+            - "-z"
