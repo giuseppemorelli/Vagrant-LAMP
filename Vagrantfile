@@ -33,12 +33,12 @@ Vagrant.configure("2") do |config|
   # config.vm.synced_folder "../data", "/vagrant_data"
 
   vagrantconfig['share'].each do |share|
-    config.vm.synced_folder share['folder']['host_folder'], share['folder']['host_folder'], create: true, owner: "vagrant"
+    config.vm.synced_folder share['folder']['host_folder'], share['folder']['vagrant_folder'], create: true, owner: "vagrant"
   end
 
-
-  #config.vm.synced_folder "/extra/folder", "/mnt/extra/folder"
-  #config.vm.synced_folder "/home/user/.ssh", "/home/vagrant/.ssh"
+  vagrantconfig['rsync'].each do |rsync|
+      config.vm.synced_folder rsync['folder']['host_folder'], rsync['folder']['vagrant_folder'], type: "rsync"
+  end
 
   config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine

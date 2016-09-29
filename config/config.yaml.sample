@@ -9,3 +9,7 @@ share:
     - folder:
         host_folder: /mnt/extra/folder
         vagrant_folder: /mnt/extra/folder
+rsync:
+    - folder:
+        host_folder: /var/www/copyproject
+        vagrant_folder: /var/www/copyproject
