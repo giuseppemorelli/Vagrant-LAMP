@@ -145,6 +145,8 @@ rsync:
             - "--delete"
 ```
 
+- start vagrant provision (automatically with new vagrant machine, with `vagrant provision` for vagrant machine previously created)
+
 ### Scripts
 
 - `enable_website.sh`: create virtual host file and enable the website configuration in apache
