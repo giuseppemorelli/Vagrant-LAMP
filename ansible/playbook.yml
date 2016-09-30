@@ -1,0 +1,8 @@
+---
+
+- name: Vagrant LAMP provisioning
+  hosts: all
+  sudo: true
+  remote_user: root
+  roles:
+    - web

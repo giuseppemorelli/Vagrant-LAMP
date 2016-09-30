@@ -1,0 +1,9 @@
+---
+
+- name: apache2 disable all website
+  shell: rm -rf /etc/apache2/sites-enabled/*
+
+- name: a2ensite default
+  command: a2ensite 000-default
+  notify:
+    - restart apache
