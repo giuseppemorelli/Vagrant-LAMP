@@ -1,10 +1,7 @@
 #!/bin/bash
-##########################################################
-# Script for full backup MySQL databases (External server)
-#
-# Usage
-# full-backup-db.sh <number_of_backup_db_expected>
-##########################################################
+##########################################
+# Script for full backup MySQL databases #
+##########################################
 
 TIMESTAMP=$(date +"%F_%H-%M-%S")
 # Absolute path of folder backup

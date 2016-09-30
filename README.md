@@ -4,15 +4,13 @@
 
 # Vagrant Box LAMP Stack
 
-```
-   _____ __  __     _       _              _    __      __                         _          _               __  __ _____  
-  / ____|  \/  |   | |     | |            | |   \ \    / /                        | |        | |        /\   |  \/  |  __ \ 
- | |  __| \  / | __| | ___ | |_ _ __   ___| |_   \ \  / /_ _  __ _ _ __ __ _ _ __ | |_       | |       /  \  | \  / | |__) |
- | | |_ | |\/| |/ _` |/ _ \| __| '_ \ / _ \ __|   \ \/ / _` |/ _` | '__/ _` | '_ \| __|      | |      / /\ \ | |\/| |  ___/ 
- | |__| | |  | | (_| | (_) | |_| | | |  __/ |_     \  / (_| | (_| | | | (_| | | | | |_       | |____ / ____ \| |  | | |     
-  \_____|_|  |_|\__,_|\___/ \__|_| |_|\___|\__|     \/ \__,_|\__, |_|  \__,_|_| |_|\__|      |______/_/    \_\_|  |_|_|     
-                                                              __/ |                                                         
-                                                             |___/                                                          
+```                                                       
+   ____ __  __     _       _              _    __     __                          _     _        _    __  __ ____  
+  / ___|  \/  | __| | ___ | |_ _ __   ___| |_  \ \   / /_ _  __ _ _ __ __ _ _ __ | |_  | |      / \  |  \/  |  _ \ 
+ | |  _| |\/| |/ _` |/ _ \| __| '_ \ / _ \ __|  \ \ / / _` |/ _` | '__/ _` | '_ \| __| | |     / _ \ | |\/| | |_) |
+ | |_| | |  | | (_| | (_) | |_| | | |  __/ |_    \ V / (_| | (_| | | | (_| | | | | |_  | |___ / ___ \| |  | |  __/ 
+  \____|_|  |_|\__,_|\___/ \__|_| |_|\___|\__|    \_/ \__,_|\__, |_|  \__,_|_| |_|\__| |_____/_/   \_\_|  |_|_|    
+                                                            |___/                                                  
 ```
 
 This is a DEV LAMP debian based box. Use it for a basic PHP development.
@@ -32,6 +30,7 @@ This is a DEV LAMP debian based box. Use it for a basic PHP development.
 3) rename `config/config.yaml.sample` in `config/config.yaml`
 
 4) change settings in `config/config.yaml`
+(if you need more information about sync folder and rsync folder just have a look here: https://www.vagrantup.com/docs/synced-folders/basic_usage.html)
 
 5) run `vagrant up` on folder where is `Vagrantfile`
 
