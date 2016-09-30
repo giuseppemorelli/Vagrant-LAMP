@@ -43,7 +43,7 @@ This is a DEV LAMP debian based box. Use it for a basic PHP development.
 - debian/jessie64  8.5.1
 - default private network ip: 192.168.250.10
 
-## Software Installed
+## Software Installed in `giuseppemorelli/lamp-stack` box version 1.0.1
 
 - apache2  2.4.10
 - [composer](https://getcomposer.org/)  1.2.0
