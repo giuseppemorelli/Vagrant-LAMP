@@ -1,4 +1,4 @@
-[![stable version](https://img.shields.io/badge/stable%20version-1.0.4-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.0.4)
+[![stable version](https://img.shields.io/badge/stable%20version-1.0.5-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.0.4)
 [![develop](https://img.shields.io/badge/beta%20version-branch%20develop-oran.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/tree/develop)
 [![license](https://img.shields.io/badge/license-OSL--3-blue.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/blob/master/LICENSE.txt)
 
@@ -121,6 +121,29 @@ This is a DEV LAMP debian based box. Use it for a basic PHP development.
 ### Vagrant Provision script
 
 - `backup_database.sh`: the script makes a backup of all databases into /home/backup/database/ folder
+
+### Vagrant Provision Ansible Local
+
+There is a sample ansible playbook to enable apache website.
+Use it if you need to customize apache website config (like add `SetEnv` parameters)
+
+Instructions:
+
+- uncomment on `Vagrantfile` the section `Ansible provision`
+- edit your `config/config.yaml` add to your rsync folder the `server/apache` folder, so you can customize without edit inside vagrant host
+
+```
+rsync:
+    - folder:
+        host_folder: /you/vagrant/folder/server/apache/sites-available
+        vagrant_folder: /etc/apache2/sites-available
+        options:
+            - "-a"
+            - "-r"
+            - "-v"
+            - "-z"
+            - "--delete"
+```
 
 ### Scripts
 
