@@ -1,6 +1,21 @@
+[![stable version](https://img.shields.io/badge/stable%20version-1.0.4-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.0.4)
+[![develop](https://img.shields.io/badge/beta%20version-branch%20develop-oran.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/tree/develop)
+[![license](https://img.shields.io/badge/license-OSL--3-blue.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/blob/master/LICENSE.txt)
+
 # Vagrant Box LAMP Stack
 
-This is a DEV LAMP debian based box. Use it for a basic development.
+```
+   _____ __  __     _       _              _    __      __                         _          _               __  __ _____  
+  / ____|  \/  |   | |     | |            | |   \ \    / /                        | |        | |        /\   |  \/  |  __ \ 
+ | |  __| \  / | __| | ___ | |_ _ __   ___| |_   \ \  / /_ _  __ _ _ __ __ _ _ __ | |_       | |       /  \  | \  / | |__) |
+ | | |_ | |\/| |/ _` |/ _ \| __| '_ \ / _ \ __|   \ \/ / _` |/ _` | '__/ _` | '_ \| __|      | |      / /\ \ | |\/| |  ___/ 
+ | |__| | |  | | (_| | (_) | |_| | | |  __/ |_     \  / (_| | (_| | | | (_| | | | | |_       | |____ / ____ \| |  | | |     
+  \_____|_|  |_|\__,_|\___/ \__|_| |_|\___|\__|     \/ \__,_|\__, |_|  \__,_|_| |_|\__|      |______/_/    \_\_|  |_|_|     
+                                                              __/ |                                                         
+                                                             |___/                                                          
+```
+
+This is a DEV LAMP debian based box. Use it for a basic PHP development.
 
 ## Requirements
 
