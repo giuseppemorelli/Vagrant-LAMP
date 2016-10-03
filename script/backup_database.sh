@@ -4,8 +4,10 @@
 ##########################################
 
 TIMESTAMP=$(date +"%F_%H-%M-%S")
-# Absolute path of folder backup
-BACKUP_ROOT=/home/backup/database
+
+# IMPORT DATABASE SCRIPT CONFIG
+. /vagrant/script/backup_database.cfg
+
 # Folder's name of backup
 BACKUP_DIR="$BACKUP_ROOT/vagrant-$TIMESTAMP"
 # MySQL username and password

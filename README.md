@@ -32,11 +32,15 @@ This is a DEV LAMP debian based box. Use it for a basic PHP development.
 4) change settings in `config/config.yaml`
 (if you need more information about sync folder and rsync folder just have a look here: https://www.vagrantup.com/docs/synced-folders/basic_usage.html)
 
-5) run `vagrant up` on folder where is `Vagrantfile`
+5) rename `script/backup_database.cfg.sample` in `script/backup_database.cfg`
+   
+6) change settings in `script/backup_database.cfg` for backup folder as you wish
 
-6) (optional) make your configuration on vagrant machine entering by run `vagrant ssh`
+7) run `vagrant up` on folder where is `Vagrantfile`
 
-7) have fun and happy coding!
+8) (optional) make your configuration on vagrant machine entering by run `vagrant ssh`
+
+9) have fun and happy coding!
 
 ## OS and base box
 
@@ -120,7 +124,7 @@ This is a DEV LAMP debian based box. Use it for a basic PHP development.
 
 ### Vagrant Provision script
 
-- `backup_database.sh`: the script makes a backup of all databases into /home/backup/database/ folder
+- `backup_database.sh`: you can use this script as single shell script or with `vagrant up --provision` 
 
 ### Vagrant Provision Ansible Local
 
