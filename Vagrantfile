@@ -31,11 +31,14 @@ Vagrant.configure("2") do |config|
   # config.vm.network "public_network"
 
   ## Shared folders
-  vagrantconfig['share'].each do |share|
-    config.vm.synced_folder share['folder']['host_folder'], share['folder']['vagrant_folder'], create: true, owner: "vagrant"
+  if vagrantconfig['share'] != nil
+    vagrantconfig['share'].each do |share|
+      config.vm.synced_folder share['folder']['host_folder'], share['folder']['vagrant_folder'], create: true, owner: "vagrant"
+    end
   end
 
   ## Rsync folders
+  if vagrantconfig['rsync'] != nil
   vagrantconfig['rsync'].each do |rsync|
       rsyncoptions = []
       rsync['folder']['options'].each do |options|
