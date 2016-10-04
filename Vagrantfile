@@ -6,7 +6,7 @@
 ## GMdotnet Vagrant LAMP Stack  ##
 ## Version 1.0.5                ##
 ##                              ##
-###################################
+##################################
 
 # Import configuration
 require 'yaml'
