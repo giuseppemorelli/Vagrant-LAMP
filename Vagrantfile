@@ -39,12 +39,13 @@ Vagrant.configure("2") do |config|
 
   ## Rsync folders
   if vagrantconfig['rsync'] != nil
-  vagrantconfig['rsync'].each do |rsync|
-      rsyncoptions = []
-      rsync['folder']['options'].each do |options|
-        rsyncoptions.push(options)
-      end
-      config.vm.synced_folder rsync['folder']['host_folder'], rsync['folder']['vagrant_folder'], type: "rsync", rsync__args: rsyncoptions
+    vagrantconfig['rsync'].each do |rsync|
+        rsyncoptions = []
+        rsync['folder']['options'].each do |options|
+          rsyncoptions.push(options)
+        end
+        config.vm.synced_folder rsync['folder']['host_folder'], rsync['folder']['vagrant_folder'], type: "rsync", rsync__args: rsyncoptions
+    end
   end
 
   ## Virtualbox options
