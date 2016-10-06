@@ -1,4 +1,4 @@
-[![stable version](https://img.shields.io/badge/stable%20version-1.0.5-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.0.5)
+[![stable version](https://img.shields.io/badge/stable%20version-1.1.0-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.1.0)
 [![develop](https://img.shields.io/badge/beta%20version-branch%20develop-oran.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/tree/develop)
 [![license](https://img.shields.io/badge/license-OSL--3-blue.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/blob/master/LICENSE.txt)
 
@@ -14,6 +14,13 @@
 ```
 
 This is a DEV LAMP debian based box. Use it for a basic PHP development.
+
+## Features
+
+- vagrant multi machine: use for separate web, db and session machine
+- choose your favourite box
+- ansible playbook for your configuration
+- YAML config file. No more Vagrantfile to edit!
 
 ## Requirements
 
@@ -124,7 +131,7 @@ This is a DEV LAMP debian based box. Use it for a basic PHP development.
 
 ### Vagrant Provision script
 
-- `backup_database.sh`: you can use this script as single shell script or with `vagrant up --provision` 
+- `backup_database.sh`: you can use this script as single shell script or enable it in `config.yaml` 
 
 ### Vagrant Provision Ansible Local
 
@@ -133,7 +140,7 @@ Use it if you need to customize apache website config (like add `SetEnv` paramet
 
 Instructions:
 
-- uncomment on `Vagrantfile` the section `Ansible provision`
+- rename `ansible/playbook.yml.sample` in `ansible/playbook.yml`
 - edit your `config/config.yaml` add to your rsync folder the `server/apache` folder, so you can customize without edit inside vagrant host
 
 ```
@@ -149,12 +156,13 @@ rsync:
             - "--delete"
 ```
 
+- edit your `config.yaml` to enable ansible provision
+
+```
+provision:
+    ansible: yes
+```
 - start vagrant provision (automatically with new vagrant machine, with `vagrant provision` for vagrant machine previously created)
-
-### Scripts
-
-- `enable_website.sh`: create virtual host file and enable the website configuration in apache
-- `disable_website.sh`: disable website configuration in apache and delete the virtual host file
 
 ### Other info
 

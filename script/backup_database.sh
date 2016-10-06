@@ -1,7 +1,11 @@
 #!/bin/bash
-##########################################
-# Script for full backup MySQL databases #
-##########################################
+##################################
+##                              ##
+## GMdotnet Vagrant LAMP Stack  ##
+## Version 1.1.0                ##
+##                              ##
+## Script for database backup   ##
+##################################
 
 TIMESTAMP=$(date +"%F_%H-%M-%S")
 

@@ -1,4 +1,5 @@
 ---
 
-#repository: <your git repository>
-#project_folder: /home/your/folder
+# variable: value
+## example
+# project_folder: /home/your/folder

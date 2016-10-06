@@ -1,7 +1,7 @@
 ---
 
-- name: Vagrant LAMP provisioning
-  hosts: all
+- name: Web host provision
+  hosts: gmweb
   sudo: true
   remote_user: root
   roles:
