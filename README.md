@@ -1,6 +1,26 @@
+[![stable version](https://img.shields.io/badge/stable%20version-1.1.0-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.1.0)
+[![develop](https://img.shields.io/badge/beta%20version-branch%20develop-oran.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/tree/develop)
+[![license](https://img.shields.io/badge/license-OSL--3-blue.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/blob/master/LICENSE.txt)
+
 # Vagrant Box LAMP Stack
 
-This is a DEV LAMP debian based box. Use it for a basic development.
+```                                                       
+   ____ __  __     _       _              _    __     __                          _     _        _    __  __ ____  
+  / ___|  \/  | __| | ___ | |_ _ __   ___| |_  \ \   / /_ _  __ _ _ __ __ _ _ __ | |_  | |      / \  |  \/  |  _ \ 
+ | |  _| |\/| |/ _` |/ _ \| __| '_ \ / _ \ __|  \ \ / / _` |/ _` | '__/ _` | '_ \| __| | |     / _ \ | |\/| | |_) |
+ | |_| | |  | | (_| | (_) | |_| | | |  __/ |_    \ V / (_| | (_| | | | (_| | | | | |_  | |___ / ___ \| |  | |  __/ 
+  \____|_|  |_|\__,_|\___/ \__|_| |_|\___|\__|    \_/ \__,_|\__, |_|  \__,_|_| |_|\__| |_____/_/   \_\_|  |_|_|    
+                                                            |___/                                                  
+```
+
+This is a DEV LAMP debian based box. Use it for a basic PHP development.
+
+## Features
+
+- vagrant multi machine: use for separate web, db and session machine
+- choose your favourite box
+- ansible playbook for your configuration
+- YAML config file. No more Vagrantfile to edit!
 
 ## Requirements
 
@@ -10,26 +30,26 @@ This is a DEV LAMP debian based box. Use it for a basic development.
 
 ## How to use
 
-1) download https://github.com/gmdotnet/Vagrant-LAMP/archive/master.zip
+- download https://github.com/gmdotnet/Vagrant-LAMP/archive/master.zip
+- unzip on your favorite work folder
+- rename `config/config.yaml.sample` in `config/config.yaml`
+- change settings in `config/config.yaml`
+(if you need more information about sync folder and rsync folder just have a look here: https://www.vagrantup.com/docs/synced-folders/basic_usage.html)
+- run `vagrant up` on folder where is `Vagrantfile`
+- (optional) make your configuration on vagrant machine entering by run `vagrant ssh`
+- have fun and happy coding!
 
-2) unzip on your favorite work folder
+#### Provision
 
-3) rename `config/config.yaml.sample` in `config/config.yaml`
-
-4) change settings in `config/config.yaml`
-
-5) run `vagrant up` on folder where is `Vagrantfile`
-
-6) (optional) make your configuration on vagrant machine entering by run `vagrant ssh`
-
-7) have fun and happy coding!
+- enable/disable you provision script directory in your `config.yaml` file
+- see the section below for more info
 
 ## OS and base box
 
 - debian/jessie64  8.5.1
 - default private network ip: 192.168.250.10
 
-## Software Installed
+## Software Installed in `giuseppemorelli/lamp-stack` box version 1.0.1
 
 - apache2  2.4.10
 - [composer](https://getcomposer.org/)  1.2.0
@@ -106,12 +126,38 @@ This is a DEV LAMP debian based box. Use it for a basic development.
 
 ### Vagrant Provision script
 
-- `backup_database.sh`: the script makes a backup of all databases into /home/backup/database/ folder
+- `backup_database.sh`: you can use this script as single shell script or enable it in `config.yaml` 
 
-### Scripts
+### Vagrant Provision Ansible Local
 
-- `enable_website.sh`: create virtual host file and enable the website configuration in apache
-- `disable_website.sh`: disable website configuration in apache and delete the virtual host file
+There is a sample ansible playbook to enable apache website.
+Use it if you need to customize apache website config (like add `SetEnv` parameters)
+
+Instructions:
+
+- rename `ansible/playbook.yml.sample` in `ansible/playbook.yml`
+- edit your `config/config.yaml` add to your rsync folder the `server/apache` folder, so you can customize without edit inside vagrant host
+
+```
+rsync:
+    - folder:
+        host_folder: /you/vagrant/folder/server/apache/sites-available
+        vagrant_folder: /etc/apache2/sites-available
+        options:
+            - "-a"
+            - "-r"
+            - "-v"
+            - "-z"
+            - "--delete"
+```
+
+- edit your `config.yaml` to enable ansible provision
+
+```
+provision:
+    ansible: yes
+```
+- start vagrant provision (automatically with new vagrant machine, with `vagrant provision` for vagrant machine previously created)
 
 ### Other info
 

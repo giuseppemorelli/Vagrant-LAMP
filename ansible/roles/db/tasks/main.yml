@@ -1,0 +1,20 @@
+---
+
+- name: install extra packages
+  apt: name={{item}} force=yes state=installed
+  with_items:
+       - mytop
+
+- template: src=mycnf.j2 dest=/root/.my.cnf mode=0644
+- template: src=create_dbuser.j2 dest=/tmp/create_dbuser.sql
+
+- name: Create DB user local for all hosts
+  shell: mysql -u root -pvagrant < /tmp/create_dbuser.sql
+  ignore_errors: yes
+
+- replace: dest=/etc/mysql/my.cnf regexp='(\s+)127.0.0.1(\s+.*)?$' replace={{ mysql_ip }}
+  notify:
+    - restart mysql
+
+#- name: Restore DB project
+#  shell: mysql -u root -pvagrant < {{ db_filepath }}

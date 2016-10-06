@@ -1,0 +1,23 @@
+##################################
+##                              ##
+## GMdotnet Vagrant LAMP Stack  ##
+## Version 1.1.0                ##
+##                              ##
+## Ansible playbook             ##
+##################################
+
+---
+
+- name: Web host provision
+  hosts: gmweb
+  sudo: true
+  remote_user: root
+  roles:
+    - web
+
+- name: Database host provision
+  hosts: gmdb
+  sudo: true
+  remote_user: root
+  roles:
+    - db

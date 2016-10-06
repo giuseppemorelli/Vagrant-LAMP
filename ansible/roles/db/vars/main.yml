@@ -1,0 +1,4 @@
+---
+
+#mysql_ip: 192.168.254.11
+#db_filepath: /home/backup/file.sql

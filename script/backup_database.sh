@@ -1,14 +1,17 @@
 #!/bin/bash
-##########################################################
-# Script for full backup MySQL databases (External server)
-#
-# Usage
-# full-backup-db.sh <number_of_backup_db_expected>
-##########################################################
+##################################
+##                              ##
+## GMdotnet Vagrant LAMP Stack  ##
+## Version 1.1.0                ##
+##                              ##
+## Script for database backup   ##
+##################################
 
 TIMESTAMP=$(date +"%F_%H-%M-%S")
-# Absolute path of folder backup
-BACKUP_ROOT=/home/backup/database
+
+# IMPORT DATABASE SCRIPT CONFIG
+. /vagrant/script/backup_database.cfg
+
 # Folder's name of backup
 BACKUP_DIR="$BACKUP_ROOT/vagrant-$TIMESTAMP"
 # MySQL username and password

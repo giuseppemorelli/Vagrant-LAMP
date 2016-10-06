@@ -1,3 +1,5 @@
 /.idea
 /.vagrant
 /config/config.yaml
+/script/backup_database.cfg
+/ansible/playbook.yml
