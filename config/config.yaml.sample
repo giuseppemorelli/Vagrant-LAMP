@@ -15,14 +15,14 @@ gmdotnet:
       box: giuseppemorelli/lamp-stack
       provision:
         ansible: yes
-        script: yes
+        script: no
       share:
       #    - folder:
       #        host_folder: /var/www/myproject.com
       #        vagrant_folder: /var/www/myproject.com
       #    - folder:
-      #        host_folder: /mnt/archivio
-      #        vagrant_folder: /mnt/archivio
+      #        host_folder: /mnt/archive
+      #        vagrant_folder: /mnt/archive
       rsync:
       #    - folder:
       #        host_folder: /mnt/extra/rsync
@@ -48,15 +48,15 @@ gmdotnet:
       ram: 1024
       box: giuseppemorelli/lamp-stack
       provision:
-        ansible: no
+        ansible: yes
         script: yes
       share:
       #    - folder:
       #        host_folder: /var/www/myproject.com
       #        vagrant_folder: /var/www/myproject.com
       #    - folder:
-      #        host_folder: /mnt/archivio
-      #        vagrant_folder: /mnt/archivio
+      #        host_folder: /mnt/archive
+      #        vagrant_folder: /mnt/archive
       rsync:
       #    - folder:
       #        host_folder: /mnt/extra/rsync
@@ -89,8 +89,8 @@ gmdotnet:
       #        host_folder: /var/www/myproject.com
       #        vagrant_folder: /var/www/myproject.com
       #    - folder:
-      #        host_folder: /mnt/archivio
-      #        vagrant_folder: /mnt/archivio
+      #        host_folder: /mnt/archive
+      #        vagrant_folder: /mnt/archive
       rsync:
       #    - folder:
       #        host_folder: /mnt/extra/rsync
