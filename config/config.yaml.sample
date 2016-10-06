@@ -15,7 +15,7 @@ gmdotnet:
       box: giuseppemorelli/lamp-stack
       provision:
         ansible: yes
-        script: no
+        script: yes
       share:
       #    - folder:
       #        host_folder: /var/www/myproject.com
@@ -48,7 +48,7 @@ gmdotnet:
       ram: 1024
       box: giuseppemorelli/lamp-stack
       provision:
-        ansible: yes
+        ansible: no
         script: yes
       share:
       #    - folder:

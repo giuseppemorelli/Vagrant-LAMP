@@ -14,3 +14,10 @@
   remote_user: root
   roles:
     - web
+
+- name: Database host provision
+  hosts: gmdb
+  sudo: true
+  remote_user: root
+  roles:
+    - db

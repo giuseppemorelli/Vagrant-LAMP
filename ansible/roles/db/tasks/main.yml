@@ -1,5 +1,10 @@
 ---
 
+- name: install extra packages
+  apt: name={{item}} force=yes state=installed
+  with_items:
+       - mytop
+
 - template: src=mycnf.j2 dest=/root/.my.cnf mode=0644
 - template: src=create_dbuser.j2 dest=/tmp/create_dbuser.sql
 
