@@ -1,8 +1,0 @@
----
-
-- name: Web host provision
-  hosts: gmweb
-  sudo: true
-  remote_user: root
-  roles:
-    - web
