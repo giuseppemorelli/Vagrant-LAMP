@@ -30,24 +30,19 @@ This is a DEV LAMP debian based box. Use it for a basic PHP development.
 
 ## How to use
 
-1) download https://github.com/gmdotnet/Vagrant-LAMP/archive/master.zip
-
-2) unzip on your favorite work folder
-
-3) rename `config/config.yaml.sample` in `config/config.yaml`
-
-4) change settings in `config/config.yaml`
+- download https://github.com/gmdotnet/Vagrant-LAMP/archive/master.zip
+- unzip on your favorite work folder
+- rename `config/config.yaml.sample` in `config/config.yaml`
+- change settings in `config/config.yaml`
 (if you need more information about sync folder and rsync folder just have a look here: https://www.vagrantup.com/docs/synced-folders/basic_usage.html)
+- run `vagrant up` on folder where is `Vagrantfile`
+- (optional) make your configuration on vagrant machine entering by run `vagrant ssh`
+- have fun and happy coding!
 
-5) rename `script/backup_database.cfg.sample` in `script/backup_database.cfg`
-   
-6) change settings in `script/backup_database.cfg` for backup folder as you wish
+#### Provision
 
-7) run `vagrant up` on folder where is `Vagrantfile`
-
-8) (optional) make your configuration on vagrant machine entering by run `vagrant ssh`
-
-9) have fun and happy coding!
+- enable/disable you provision script directory in your `config.yaml` file
+- see the section below for more info
 
 ## OS and base box
 
