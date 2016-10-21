@@ -1,4 +1,4 @@
-[![stable version](https://img.shields.io/badge/stable%20version-1.1.0-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.1.0)
+[![stable version](https://img.shields.io/badge/stable%20version-1.1.1-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.1.1)
 [![develop](https://img.shields.io/badge/beta%20version-branch%20develop-oran.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/tree/develop)
 [![license](https://img.shields.io/badge/license-OSL--3-blue.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/blob/master/LICENSE.txt)
 
@@ -26,6 +26,8 @@ This is a DEV LAMP debian based box. Use it for a basic PHP development.
 
 - virtualbox 5.x
 - vagrant >1.8.4
+- vagrant HostsUpdater plugin: https://github.com/cogitatio/vagrant-hostsupdater
+  install with `vagrant plugin install vagrant-hostsupdater`
 - (in case of error of shared folder mount errors) vagrant vagrant-vbguest plugin (install with the command `vagrant plugin install vagrant-vbguest`)
 
 ## How to use
