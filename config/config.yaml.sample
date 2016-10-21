@@ -1,7 +1,7 @@
 ##################################
 ##                              ##
 ## GMdotnet Vagrant LAMP Stack  ##
-## Version 1.1.0                ##
+## Version 1.1.1                ##
 ##                              ##
 ## Vagrant config file          ##
 ##################################
@@ -10,12 +10,18 @@ gmdotnet:
   - host:
       vagrantbox_name: gmweb
       hostname: gmweb
+      hostsupdate:
+        enable: yes    # enable hostsupdater plugin
+        permanent: no  # your changes to /etc/hosts will be permanent
       private_ip: 192.168.250.10
       ram: 1024
-      box: giuseppemorelli/lamp-stack
+      box:
+        name: giuseppemorelli/lamp-stack
+        check_update: yes
       provision:
         ansible: yes
-        script: yes
+        script: no
+      # SHARED FOLDERS
       share:
       #    - folder:
       #        host_folder: /var/www/myproject.com
@@ -23,6 +29,7 @@ gmdotnet:
       #    - folder:
       #        host_folder: /mnt/archive
       #        vagrant_folder: /mnt/archive
+      # RSYNC FOLDERS
       rsync:
       #    - folder:
       #        host_folder: /mnt/extra/rsync
@@ -44,9 +51,14 @@ gmdotnet:
   - host:
       vagrantbox_name: gmdb
       hostname: gmdb
+      hostsupdate:
+        enable: yes
+        permanent: no
       private_ip: 192.168.250.11
       ram: 1024
-      box: giuseppemorelli/lamp-stack
+      box:
+        name: giuseppemorelli/lamp-stack
+        check_update: yes
       provision:
         ansible: no
         script: yes
@@ -77,10 +89,15 @@ gmdotnet:
       #            - "-z"
   - host:
       vagrantbox_name: gmredis
-      hostname: gmdredis
+      hostname: gmredis
+      hostsupdate:
+        enable: yes
+        permanent: no
       private_ip: 192.168.250.12
       ram: 1024
-      box: giuseppemorelli/lamp-stack
+      box:
+        name: giuseppemorelli/lamp-stack
+        check_update: yes
       provision:
         ansible: no
         script: no
