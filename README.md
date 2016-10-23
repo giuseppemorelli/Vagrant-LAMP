@@ -21,6 +21,7 @@ This is a DEV LAMP debian based box. Use it for a basic PHP development.
 - choose your favourite box
 - ansible playbook for your configuration
 - YAML config file. No more Vagrantfile to edit!
+- with vagrant plugin HostsUpdater: no more /etc/hosts file to edit!
 
 ## Requirements
 
