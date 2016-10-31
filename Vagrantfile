@@ -4,7 +4,7 @@
 ##################################
 ##                              ##
 ## GMdotnet Vagrant LAMP Stack  ##
-## Version 1.1.1                ##
+## Version 1.1.2                ##
 ##                              ##
 ##################################
 
@@ -21,6 +21,9 @@ Vagrant.configure("2") do |config|
         vmhost.vm.box = machine['host']['box']['name']
         vmhost.vm.box_check_update = machine['host']['box']['check_update']
         vmhost.vm.hostname = machine['host']['hostname']
+        if machine['host']['hostsupdate']['aliases'] != nil
+            vmhost.hostsupdater.aliases = machine['host']['hostsupdate']['aliases']
+        end
 
         # Hostsupdater plugin
         if machine['host']['hostsupdate']['permanent'] == true
