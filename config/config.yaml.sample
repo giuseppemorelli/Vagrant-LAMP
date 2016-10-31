@@ -1,7 +1,7 @@
 ##################################
 ##                              ##
 ## GMdotnet Vagrant LAMP Stack  ##
-## Version 1.1.1                ##
+## Version 1.1.2                ##
 ##                              ##
 ## Vagrant config file          ##
 ##################################
@@ -13,6 +13,7 @@ gmdotnet:
       hostsupdate:
         enable: yes    # enable hostsupdater plugin
         permanent: no  # your changes to /etc/hosts will be permanent
+        aliases: ["alias.gmweb", "alias2.gmweb"]  # alias for same ip in your file hosts, leave blank for no aliases
       private_ip: 192.168.250.10
       ram: 1024
       box:

@@ -1,4 +1,4 @@
-[![stable version](https://img.shields.io/badge/stable%20version-1.1.1-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.1.1)
+[![stable version](https://img.shields.io/badge/stable%20version-1.1.2-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.1.2)
 [![develop](https://img.shields.io/badge/beta%20version-branch%20develop-oran.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/tree/develop)
 [![license](https://img.shields.io/badge/license-OSL--3-blue.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/blob/master/LICENSE.txt)
 
@@ -20,7 +20,9 @@ This is a DEV LAMP debian based box. Use it for a basic PHP development.
 - vagrant multi machine: use for separate web, db and session machine
 - choose your favourite box
 - ansible playbook for your configuration
+- update your file hosts automatically
 - YAML config file. No more Vagrantfile to edit!
+- with vagrant plugin HostsUpdater: no more /etc/hosts file to edit!
 
 ## Requirements
 
