@@ -168,6 +168,9 @@ provision:
 - root password is `vagrant` but you can simply run `sudo su` from vagrant user
 - if you can't find a configuration in this file before, it means is used the default value
 
+## Contribution
+Any contribution is highly appreciated. The best way to contribute code is to open a [pull request on GitHub](https://help.github.com/articles/using-pull-requests).<br />Please create your pull request against the `develop` branch
+
 ### Credits
 
 Giuseppe Morelli - [giuseppemorelli.net](http://www.giuseppemorelli.net)
