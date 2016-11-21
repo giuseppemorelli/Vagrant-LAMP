@@ -45,7 +45,7 @@ This is a DEV LAMP debian based box. Use it for a basic PHP development.
 
 #### Provision
 
-- enable/disable you provision script directory in your `config.yaml` file
+- enable/disable your provision script directory in your `config.yaml` file
 - see the section below for more info
 
 ## OS and base box
