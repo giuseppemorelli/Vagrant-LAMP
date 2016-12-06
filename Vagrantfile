@@ -4,7 +4,7 @@
 ##################################
 ##                              ##
 ## GMdotnet Vagrant LAMP Stack  ##
-## Version 1.1.2                ##
+## Version 1.1.3                ##
 ##                              ##
 ##################################
 
@@ -19,6 +19,9 @@ Vagrant.configure("2") do |config|
     config.vm.define machine['host']['vagrantbox_name'] do |vmhost|
         # Machine info
         vmhost.vm.box = machine['host']['box']['name']
+        if machine['host']['box']['version'] != nil
+            vmhost.vm.box_version = machine['host']['box']['version']
+        end
         vmhost.vm.box_check_update = machine['host']['box']['check_update']
         vmhost.vm.hostname = machine['host']['hostname']
         if machine['host']['hostsupdate']['aliases'] != nil
