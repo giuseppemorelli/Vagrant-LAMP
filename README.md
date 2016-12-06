@@ -1,26 +1,17 @@
-[![stable version](https://img.shields.io/badge/stable%20version-1.1.2-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.1.2)
+[![stable version](https://img.shields.io/badge/stable%20version-1.1.3-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.1.3)
 [![develop](https://img.shields.io/badge/beta%20version-branch%20develop-oran.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/tree/develop)
 [![license](https://img.shields.io/badge/license-OSL--3-blue.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/blob/master/LICENSE.txt)
+[![gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/GMdotnet/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 # Vagrant Box LAMP Stack
 
-```                                                       
-   ____ __  __     _       _              _    __     __                          _     _        _    __  __ ____  
-  / ___|  \/  | __| | ___ | |_ _ __   ___| |_  \ \   / /_ _  __ _ _ __ __ _ _ __ | |_  | |      / \  |  \/  |  _ \ 
- | |  _| |\/| |/ _` |/ _ \| __| '_ \ / _ \ __|  \ \ / / _` |/ _` | '__/ _` | '_ \| __| | |     / _ \ | |\/| | |_) |
- | |_| | |  | | (_| | (_) | |_| | | |  __/ |_    \ V / (_| | (_| | | | (_| | | | | |_  | |___ / ___ \| |  | |  __/ 
-  \____|_|  |_|\__,_|\___/ \__|_| |_|\___|\__|    \_/ \__,_|\__, |_|  \__,_|_| |_|\__| |_____/_/   \_\_|  |_|_|    
-                                                            |___/                                                  
-```
-
-This is a DEV LAMP debian based box. Use it for a basic PHP development.
+This is a DEV LAMP vagrant box and configuration. Use it for a basic PHP development.
 
 ## Features
 
 - vagrant multi machine: use for separate web, db and session machine
-- choose your favourite box
+- choose your favourite box, or get pre-configured box (see BOXES.md)
 - ansible playbook for your configuration
-- update your file hosts automatically
 - YAML config file. No more Vagrantfile to edit!
 - with vagrant plugin HostsUpdater: no more /etc/hosts file to edit!
 
@@ -48,54 +39,12 @@ This is a DEV LAMP debian based box. Use it for a basic PHP development.
 - enable/disable your provision script directory in your `config.yaml` file
 - see the section below for more info
 
-## OS and base box
+## Vagrant boxes created
 
-- debian/jessie64  8.5.1
-- default private network ip: 192.168.250.10
+You can choose any box you want. This is a pre-configured LAMP stack. See `BOXES.md` for software installed list.
 
-## Software Installed in `giuseppemorelli/lamp-stack` box version 1.0.1
-
-- apache2  2.4.10
-- [composer](https://getcomposer.org/)  1.2.0
-- curl
-- git
-- [git-up](https://github.com/aanand/git-up/) (plugin for git)
-- htop
-- jpegoptim 1.4.1
-- mailutils
-- [mailhog](https://github.com/mailhog/MailHog)  0.2.0
-- mc-dbg (midnight commander)
-- mysql-server 5.5
-- mysqltuner 1.6.0
-- optipng 0.7.5
-- phpmyadmin 4.6.3 - all languages (accessible via *http://phpmyadmin.vagrant* on your file host with the same ip of vagrant machine)
-- postfix
-- [sass](http://sass-lang.com/)  3.4.22
-- tig
-- xdebug
-
-- Magento Utils:
-    - [modman](https://github.com/colinmollenhour/modman) 1.12
-    - [n98-magerun](https://github.com/netz98/n98-magerun)  1.97.22
-
-- PHP
-    - php5  5.6
-    - php5-cli
-    - php5-curl
-    - php5-dev
-    - php5-gd
-    - php5-intl
-    - php5-mcrypt
-    - php5-mysql
-    - php-pear
-
-- [Node.js](https://nodejs.org/en/) 4.4.7
-    - [npm](https://www.npmjs.com/)  2.15.8
-    - [bower](https://bower.io/)  1.7.9
-    - [LESS](http://lesscss.org/)  2.7.1
-    - [CSS Lint](http://csslint.net/)  1.0.2
-    - [grunt-cli](http://gruntjs.com/)  1.2.0
-    - [grunt](http://gruntjs.com/)  1.0.1
+- giuseppemorelli/lamp-stack 1.0.1 (debian jessie 8.5)
+- giuseppemorelli/lamp-stack 1.0.2 (debian jessie 8.6)
 
 ### MySQL server
 

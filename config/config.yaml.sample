@@ -1,7 +1,7 @@
 ##################################
 ##                              ##
 ## GMdotnet Vagrant LAMP Stack  ##
-## Version 1.1.2                ##
+## Version 1.1.3                ##
 ##                              ##
 ## Vagrant config file          ##
 ##################################
@@ -19,6 +19,7 @@ gmdotnet:
       box:
         name: giuseppemorelli/lamp-stack
         check_update: yes
+        version: 1.0.2  # leave empty if you want the latest version
       provision:
         ansible: yes
         script: no
@@ -60,6 +61,7 @@ gmdotnet:
       box:
         name: giuseppemorelli/lamp-stack
         check_update: yes
+        version: 1.0.1  # leave empty if you want the latest version
       provision:
         ansible: no
         script: yes
@@ -99,6 +101,7 @@ gmdotnet:
       box:
         name: giuseppemorelli/lamp-stack
         check_update: yes
+        version: 1.0.1  # leave empty if you want the latest version
       provision:
         ansible: no
         script: no
