@@ -2,7 +2,7 @@
 ##################################
 ##                              ##
 ## GMdotnet Vagrant LAMP Stack  ##
-## Version 1.1.3                ##
+## Version 1.1.4                ##
 ##                              ##
 ## Script for database backup   ##
 ##################################
