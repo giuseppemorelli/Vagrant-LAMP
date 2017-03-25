@@ -1,4 +1,4 @@
-[![stable version](https://img.shields.io/badge/stable%20version-1.1.3-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.1.3)
+[![stable version](https://img.shields.io/badge/stable%20version-1.1.4-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.1.4)
 [![develop](https://img.shields.io/badge/beta%20version-branch%20develop-oran.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/tree/develop)
 [![license](https://img.shields.io/badge/license-OSL--3-blue.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/blob/master/LICENSE.txt)
 [![gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/GMdotnet/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
@@ -45,6 +45,7 @@ You can choose any box you want. This is a pre-configured LAMP stack. See `BOXES
 
 - giuseppemorelli/lamp-stack 1.0.1 (debian jessie 8.5)
 - giuseppemorelli/lamp-stack 1.0.2 (debian jessie 8.6)
+- giuseppemorelli/lamp-stack 1.0.3 (debian jessie 8.6)
 
 ### MySQL server
 
@@ -58,6 +59,7 @@ You can choose any box you want. This is a pre-configured LAMP stack. See `BOXES
 - root folder is `/var/www`
 - mod_rewrite and mod_vhost_alias enabled
 - IMPORTANT: you need to add `EnableSendfile Off` on your website configuration under <Directory "..."> </Directory> ( here all info  https://www.vagrantup.com/docs/synced-folders/virtualbox.html )
+- All website must be `*.vagrant` because main server name is `vagrant`, if you want to change please edit `/etc/apache2/ports.conf`
 
 ### PHP Xdebug
 
@@ -83,27 +85,11 @@ You can choose any box you want. This is a pre-configured LAMP stack. See `BOXES
 
 ### Vagrant Provision Ansible Local
 
-There is a sample ansible playbook to enable apache website.
-Use it if you need to customize apache website config (like add `SetEnv` parameters)
+There is a sample ansible playbook to enable service and configuration for your machine.
 
 Instructions:
 
 - rename `ansible/playbook.yml.sample` in `ansible/playbook.yml`
-- edit your `config/config.yaml` add to your rsync folder the `server/apache` folder, so you can customize without edit inside vagrant host
-
-```
-rsync:
-    - folder:
-        host_folder: /you/vagrant/folder/server/apache/sites-available
-        vagrant_folder: /etc/apache2/sites-available
-        options:
-            - "-a"
-            - "-r"
-            - "-v"
-            - "-z"
-            - "--delete"
-```
-
 - edit your `config.yaml` to enable ansible provision
 
 ```
@@ -111,6 +97,25 @@ provision:
     ansible: yes
 ```
 - start vagrant provision (automatically with new vagrant machine, with `vagrant provision` for vagrant machine previously created)
+
+If you aren't familiar with ansible you can install **Webmin panel**. Just follow the instruction below.
+
+### Install Webmin panel
+
+From vagrant shell:
+
+```bash
+sudo su
+wget http://www.webmin.com/jcameron-key.asc
+apt-key add jcameron-key.asc
+rm jcameron-key.asc
+echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list
+apt-get update
+apt-get install -y apt-transport-https
+apt-get install -y webmin
+```
+
+Login to `https://<ip vagrant or alias>:10000` with user `root` and password `vagrant`
 
 ### Other info
 

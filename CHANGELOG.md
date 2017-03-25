@@ -1,5 +1,10 @@
 # GMdotnet - Vagrant LAMP
 
+## 1.1.4
+
+- [imp] add instructions to use webmin panel
+- [fix] readme and config yaml files
+
 ## 1.1.3
 
 - [dev] add box version to yaml config file

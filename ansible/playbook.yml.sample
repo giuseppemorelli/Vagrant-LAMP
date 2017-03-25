@@ -1,7 +1,7 @@
 ##################################
 ##                              ##
 ## GMdotnet Vagrant LAMP Stack  ##
-## Version 1.1.3                ##
+## Version 1.1.4                ##
 ##                              ##
 ## Ansible playbook             ##
 ##################################
@@ -14,6 +14,7 @@
   remote_user: root
   roles:
     - web
+#    - webmin
 
 - name: Database host provision
   hosts: gmdb

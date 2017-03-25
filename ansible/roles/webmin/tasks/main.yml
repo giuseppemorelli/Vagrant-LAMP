@@ -1,0 +1,12 @@
+---
+
+- name: install webmin panel
+  shell: "{{ item }}"
+  with_items:
+    - wget http://www.webmin.com/jcameron-key.asc
+    - apt-key add jcameron-key.asc
+    - rm jcameron-key.asc
+    - echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list
+    - apt-get update
+    - apt-get install -y apt-transport-https
+    - apt-get install -y webmin
