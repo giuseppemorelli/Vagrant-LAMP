@@ -1,13 +1,16 @@
 ##################################
 ##                              ##
 ## GMdotnet Vagrant LAMP Stack  ##
-## Version 1.1.4                ##
+## Version 1.1.5                ##
 ##                              ##
 ## Vagrant config file          ##
 ##################################
 
 gmdotnet:
   - host:
+      # enable or not the machine
+      # if you not enable the machine, it will not be created
+      enable: yes
       vagrantbox_name: gmweb
       hostname: gmweb
       hostsupdate:
@@ -51,6 +54,9 @@ gmdotnet:
       #            - "-v"
       #            - "-z"
   - host:
+      # enable or not the machine
+      # if you not enable the machine, it will not be created
+      enable: no
       vagrantbox_name: gmdb
       hostname: gmdb
       hostsupdate:
@@ -91,6 +97,9 @@ gmdotnet:
       #            - "-v"
       #            - "-z"
   - host:
+      # enable or not the machine
+      # if you not enable the machine, it will not be created
+      enable: no
       vagrantbox_name: gmredis
       hostname: gmredis
       hostsupdate:

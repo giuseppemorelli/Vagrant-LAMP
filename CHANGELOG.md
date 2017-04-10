@@ -1,5 +1,7 @@
 # GMdotnet - Vagrant LAMP
 
+- [imp] add option "enable" to choose with machine can be active or not
+
 ## 1.1.4
 
 - [imp] add instructions to use webmin panel
