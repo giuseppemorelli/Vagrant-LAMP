@@ -31,9 +31,13 @@ gmdotnet:
       #    - folder:
       #        host_folder: /var/www/myproject.com
       #        vagrant_folder: /var/www/myproject.com
+      #        owner: vagrant
+      #        group: vagrant
       #    - folder:
       #        host_folder: /mnt/archive
       #        vagrant_folder: /mnt/archive
+      #        owner: vagrant
+      #        group: vagrant
       # RSYNC FOLDERS
       rsync:
       #    - folder:

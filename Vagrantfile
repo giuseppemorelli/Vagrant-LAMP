@@ -45,7 +45,16 @@ Vagrant.configure("2") do |config|
                 ## Shared folders
                 if machine['host']['share'] != nil
                     machine['host']['share'].each do |share|
-                        vmhost.vm.synced_folder share['folder']['host_folder'], share['folder']['vagrant_folder'], create: true, owner: "vagrant"
+                        ## Shared folders - owner
+                        owner = "vagrant"
+                        group = "vagrant"
+                        if share['folder']['owner'] != nil
+                            owner = share['folder']['owner']
+                        end
+                        if share['folder']['group'] != nil
+                            group = share['folder']['group']
+                        end
+                        vmhost.vm.synced_folder share['folder']['host_folder'], share['folder']['vagrant_folder'], create: true, owner: owner, group: group
                     end
                 end
 
