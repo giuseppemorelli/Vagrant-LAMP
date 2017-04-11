@@ -1,5 +1,10 @@
 # GMdotnet - Vagrant LAMP
 
+## 1.1.5
+
+- [imp] add option "enable" to choose with machine can be active or not
+- [imp] add owner and group on shared folders
+
 ## 1.1.4
 
 - [imp] add instructions to use webmin panel
