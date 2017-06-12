@@ -25,22 +25,25 @@ Vagrant.configure("2") do |config|
                 vmhost.vm.box_check_update = machine['host']['box']['check_update']
                 vmhost.vm.hostname = machine['host']['hostname']
 
-                if machine['host']['hostsupdate']['aliases'] != nil
-                    vmhost.hostsupdater.aliases = machine['host']['hostsupdate']['aliases']
-                end
-
                 # Hostsupdater plugin
-                if machine['host']['hostsupdate']['permanent'] == true
-                    vmhost.hostsupdater.remove_on_suspend = false
-                end
+                if machine['host']['hostsupdate']['enable'] == true
 
-                enable_hostupdate = true
-                if machine['host']['hostsupdate']['enable'] == false
-                    enable_hostupdate = "skip"
-                end
+                    # Hostsupdater aliases
+                    if machine['host']['hostsupdate']['aliases'] != nil
+                        vmhost.hostsupdater.aliases = machine['host']['hostsupdate']['aliases']
+                    end
 
-                ## Private IP Network
-                vmhost.vm.network "private_network", ip: machine['host']['private_ip'], hostsupdater: enable_hostupdate
+                    # Hostsupdater permanent role
+                    if machine['host']['hostsupdate']['permanent'] == true
+                        vmhost.hostsupdater.remove_on_suspend = false
+                    end
+
+                    ## Private IP Network
+                    vmhost.vm.network "private_network", ip: machine['host']['private_ip'], hostsupdater: true
+                else
+                    ## Private IP Network
+                    vmhost.vm.network "private_network", ip: machine['host']['private_ip']
+                end
 
                 ## Shared folders
                 if machine['host']['share'] != nil
