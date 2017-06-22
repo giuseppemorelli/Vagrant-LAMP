@@ -19,7 +19,7 @@ This is a DEV LAMP vagrant box and configuration. Use it for a basic PHP develop
 
 - virtualbox 5.x
 - vagrant >1.8.4
-- vagrant HostsUpdater plugin: https://github.com/cogitatio/vagrant-hostsupdater
+- (optional)vagrant HostsUpdater plugin: https://github.com/cogitatio/vagrant-hostsupdater
   install with `vagrant plugin install vagrant-hostsupdater`
 - (in case of error of shared folder mount errors) vagrant vagrant-vbguest plugin (install with the command `vagrant plugin install vagrant-vbguest`)
 

@@ -45,6 +45,9 @@ Vagrant.configure("2") do |config|
                     vmhost.vm.network "private_network", ip: machine['host']['private_ip']
                 end
 
+                ## Post message
+                vmhost.vm.post_up_message = "Welcome to GMdotnet Vagrant LAMP! If you need help just go here https://github.com/gmdotnet/Vagrant-LAMP"
+
                 ## Shared folders
                 if machine['host']['share'] != nil
                     machine['host']['share'].each do |share|

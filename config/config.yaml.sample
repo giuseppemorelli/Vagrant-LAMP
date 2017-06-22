@@ -18,7 +18,7 @@ gmdotnet:
         permanent: no  # your changes to /etc/hosts will be permanent
         aliases: ["alias.gmweb", "alias2.gmweb"]  # alias for same ip in your file hosts, leave blank for no aliases
       private_ip: 192.168.250.10
-      ram: 1024
+      ram: 1024 # only for virtualbox provider
       box:
         name: giuseppemorelli/lamp-stack
         check_update: yes
