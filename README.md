@@ -1,9 +1,7 @@
-[![stable version](https://img.shields.io/badge/stable%20version-1.1.5-green.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/releases/tag/1.1.5)
-[![develop](https://img.shields.io/badge/beta%20version-branch%20develop-oran.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/tree/develop)
-[![license](https://img.shields.io/badge/license-OSL--3-blue.svg?style=flat-square)](https://github.com/gmdotnet/Vagrant-LAMP/blob/master/LICENSE.txt)
-[![gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/GMdotnet/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+[DISCONTINUED]
+See new project here: https://github.com/gmdotnet/vagrant-multi-machine-virtualbox
 
-# Vagrant Box LAMP Stack
+## Vagrant Box LAMP Stack
 
 This is a DEV LAMP vagrant box and configuration. Use it for a basic PHP development.
 
